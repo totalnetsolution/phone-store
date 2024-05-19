@@ -1,6 +1,7 @@
 
 body{
-    background-image: url(././styles/image/phones\ background.webp);
+    background-image: url(./styles/image/row-cell-phones-with-one-that-says-time-is-10-00_1042426-56293.avif);
+    background-size: 100vw;
 }
 
 .card { margin-bottom: 20px; }
@@ -13,6 +14,3 @@ body{
     align-items: center;
 }
 
-img{
-    width: 150px;
-}
