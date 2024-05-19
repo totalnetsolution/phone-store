@@ -1,0 +1,7 @@
+
+body{
+    background-image: url(././styles/image/phones\ background.webp);
+}
+
+.card { margin-bottom: 20px; }
+.card-body { display: flex; flex-direction: column; align-items: center; }
