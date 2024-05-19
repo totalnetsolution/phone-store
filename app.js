@@ -1,16 +1,16 @@
  const phones = [
-    { id: 1, name: 'Apple Iphone 13 Pro Max', price: 699, img: 'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-13-pro-max-01.jpg'},
-    { id: 2, name: 'Samsung Galaxy S24', price: 799, img: 'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s24-5g-sm-s921-1.jpg' },
-    { id: 3, name: 'Phone 3', price: 899, img: 'phone3.jpg' },
-    { id: 4, name: 'Phone 4', price: 999, img: 'phone4.jpg' },
-    { id: 5, name: 'Phone 5', price: 1099, img: 'phone5.jpg' },
-    { id: 6, name: 'Phone 6', price: 1199, img: 'phone6.jpg' },
-    { id: 7, name: 'Phone 7', price: 1299, img: 'phone7.jpg' },
-    { id: 8, name: 'Phone 8', price: 1399, img: 'phone8.jpg' },
-    { id: 9, name: 'Phone 9', price: 1499, img: 'phone9.jpg' },
-    { id: 10, name: 'Phone 10', price: 1599, img: 'phone10.jpg' },
-    { id: 11, name: 'Phone 11', price: 1699, img: 'phone11.jpg' },
-    { id: 12, name: 'Phone 12', price: 1799, img: 'phone12.jpg' },
+    { id: 1, name: 'Google Pixel 7 Pro', price: 399, img: 'https://fdn2.gsmarena.com/vv/bigpic/google-pixel7-pro-new.jpg'},
+    { id: 2, name: 'Realme 12 Pro+', price: 499, img: 'https://fdn2.gsmarena.com/vv/bigpic/realme-12-pro-plus.jpg' },
+    { id: 3, name: 'vivo X100s Pro', price: 599, img: 'https://fdn2.gsmarena.com/vv/bigpic/vivo-x100s-pro.jpg' },
+    { id: 4, name: 'OnePlus 12', price: 699, img: 'https://fdn2.gsmarena.com/vv/bigpic/oneplus-12.jpg' },
+    { id: 5, name: 'Apple iPhone 14 Pro Max', price: 799, img: 'https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-14-pro-max-.jpg' },
+    { id: 6, name: 'Sony Xperia 1 V', price: 899, img: 'https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-1-v.jpg' },
+    { id: 7, name: 'Apple iPhone 15 Pro', price: 999, img: 'https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-15-pro.jpg' },
+    { id: 8, name: 'Motorola Edge 50 Ultra', price: 1099, img: 'https://fdn2.gsmarena.com/vv/bigpic/motorola-edge-50-ultra.jpg' },
+    { id: 9, name: 'Apple iPhone 15 Pro Max', price: 1199, img: 'https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-15-pro-max.jpg' },
+    { id: 10, name: 'Google Pixel Fold', price: 1299, img: 'https://fdn2.gsmarena.com/vv/bigpic/google-pixel-fold.jpg' },
+    { id: 11, name: 'Apple iPad Air 13 (2024)', price: 1399, img: 'https://fdn2.gsmarena.com/vv/bigpic/apple-ipad-air-13-2024.jpg' },
+    { id: 12, name: 'Apple iPad Pro 13 (2024)', price: 1499, img: 'https://fdn2.gsmarena.com/vv/bigpic/apple-ipad-pro-13-2024.jpg' },
 ];
 
 const phoneCards = document.getElementById('phone-cards');

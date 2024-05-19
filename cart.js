@@ -1,34 +1,60 @@
-   // Function to load cart items from local storage
-   function loadCart() {
-    const cartItemsContainer = document.getElementById('cart-items');
-    cartItemsContainer.innerHTML = ''; // Clear existing items
+function loadCart() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    if (cart.length === 0) {
-        cartItemsContainer.innerHTML = '<p class="text-center">Your cart is empty.</p>';
-        return;
-    }
+    let cartItems = $('#cart-items');
+    cartItems.empty();
+    let totalAmount = 0;
 
     cart.forEach(item => {
-        const cartItem = document.createElement('div');
-        cartItem.className = 'card mb-3';
-        cartItem.innerHTML = `
-            <div class="card-body">
-                <h5 class="card-title">${item.name}</h5>
-                <p class="card-text">Price: $${item.price}</p>
-                <p class="card-text">Quantity: ${item.quantity}</p>
-                <p class="card-text">Total: $${item.price * item.quantity}</p>
+        totalAmount += item.price * item.quantity;
+        cartItems.append(`
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">${item.name}</h5>
+                    <p class="card-text">Price: $${item.price}</p>
+                    <div class="quantity-controls">
+                        <button class="btn btn-secondary btn-sm" onclick="updateCartQuantity(${item.id}, -1)">-</button>
+                        <span id="cart-quantity-${item.id}">${item.quantity}</span>
+                        <button class="btn btn-secondary btn-sm" onclick="updateCartQuantity(${item.id}, 1)">+</button>
+                    </div>
+                    <button class="btn btn-danger mt-2" onclick="removeFromCart(${item.id})">Remove</button>
+                </div>
             </div>
-        `;
-        cartItemsContainer.appendChild(cartItem);
+        `);
     });
+
+    $('#total-amount').text(`Total: $${totalAmount}`);
 }
 
-// Function to handle checkout
+function updateCartQuantity(id, change) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const item = cart.find(item => item.id === id);
+    if (item) {
+        if (item.quantity + change > 0) {
+            item.quantity += change;
+        } else {
+            cart.splice(cart.indexOf(item), 1);
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+        loadCart();
+    }
+}
+
+function removeFromCart(id) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const item = cart.find(item => item.id === id);
+    if (item) {
+        cart.splice(cart.indexOf(item), 1);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        loadCart();
+    }
+}
+
 function checkout() {
-    alert('Proceeding to checkout');
-    localStorage.removeItem('cart'); // Clear the cart
-    loadCart(); // Reload the cart to reflect changes
+    alert('Checking out...');
+    localStorage.removeItem('cart');
+    loadCart();
 }
 
-// Load cart items on page load
-window.onload = loadCart;
+$(document).ready(function() {
+    loadCart();
+});
